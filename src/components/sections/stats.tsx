@@ -1,0 +1,135 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+
+const statsData = [
+  { value: 15, suffix: "+", title: "Years of Experience" },
+  { value: 40, suffix: "+", title: "Projects Completed" },
+  { value: 100, suffix: "%", title: "Client Satisfaction" },
+];
+
+function useCountUp(end: number, duration: number = 2) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLParagraphElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  const easeOutCubic = (t: number): number => 1 - Math.pow(1 - t, 3);
+
+  useEffect(() => {
+    if (isInView) {
+      let startTime: number | undefined;
+      const animate = (timestamp: number) => {
+        if (startTime === undefined) {
+          startTime = timestamp;
+        }
+        const elapsedTime = timestamp - startTime;
+        const progress = Math.min(elapsedTime / (duration * 1000), 1);
+        const easedProgress = easeOutCubic(progress);
+
+        setCount(Math.round(easedProgress * end));
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          setCount(end);
+        }
+      };
+      requestAnimationFrame(animate);
+    }
+  }, [isInView, end, duration]);
+
+  return { count, ref };
+}
+
+const StatItem = ({
+  value,
+  suffix,
+  title,
+  index,
+}: {
+  value: number;
+  suffix: string;
+  title: string;
+  index: number;
+}) => {
+  const { count, ref } = useCountUp(value, 1.5);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.2 }}
+      className="flex flex-col items-center text-center"
+    >
+      <motion.p
+        ref={ref}
+        whileHover={{ scale: 1.1, y: -5 }}
+        transition={{ type: "spring", stiffness: 300, damping: 15 }}
+        className="font-serif text-[48px] font-bold text-text-dark leading-[1.2] tracking-[-0.01em]"
+      >
+        {count}
+        <motion.span
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1.8 + index * 0.2 }}
+          className="text-primary"
+        >
+          {suffix}
+        </motion.span>
+      </motion.p>
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 + index * 0.2 }}
+        className="mt-2.5 text-base font-normal text-muted-foreground leading-[1.6]"
+      >
+        {title}
+      </motion.p>
+    </motion.div>
+  );
+};
+
+const StatsSection = () => {
+  return (
+    <section className="bg-background relative overflow-hidden">
+      {/* Animated background elements */}
+      <motion.div
+        className="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
+        animate={{
+          x: [0, 100, 0],
+          y: [0, 50, 0],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/50 rounded-full blur-3xl"
+        animate={{
+          x: [0, -100, 0],
+          y: [0, -50, 0],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      <div className="container mx-auto py-10 sm:py-[60px] md:py-20 lg:py-[120px] relative z-10">
+        <div className="grid grid-cols-1 gap-y-12 md:grid-cols-3 md:gap-x-8">
+          {statsData.map((stat, index) => (
+            <StatItem key={stat.title} {...stat} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default StatsSection;
