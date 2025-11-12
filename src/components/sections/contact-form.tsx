@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { ArrowRight, Mail, Phone, FileText } from "lucide-react";
+import { FormEvent, useState } from "react";
+import { ArrowRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { motion } from "framer-motion";
@@ -17,6 +17,44 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const ContactFormSection = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
+  const [serviceType, setServiceType] = useState("");
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const fullName = (formData.get("fullName") as string)?.trim() ?? "";
+    const email = (formData.get("email") as string)?.trim() ?? "";
+    const phone = (formData.get("phone") as string)?.trim() ?? "";
+    const location = (formData.get("location") as string)?.trim() ?? "";
+    const projectService = serviceType.trim();
+    const message = (formData.get("message") as string)?.trim() ?? "";
+
+    if (!projectService) {
+      alert("Please select a service type before submitting.");
+      return;
+    }
+
+    const whatsappNumber = "916303822799";
+    const whatsappMessage = [
+      "Hello ASL Realtors, I'd like to request a quote.",
+      fullName ? `Name: ${fullName}` : null,
+      email ? `Email: ${email}` : null,
+      phone ? `Phone: ${phone}` : null,
+      projectService ? `Service: ${projectService}` : null,
+      location ? `Location: ${location}` : null,
+      message ? `Message: ${message}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+    form.reset();
+    setServiceType("");
+  };
 
   return (
     <section
@@ -39,123 +77,31 @@ const ContactFormSection = () => {
 
       <div className="container mx-auto max-w-6xl px-4 relative z-10">
         <div ref={ref} className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-          {/* Left Column */}
+          {/* Left Column: Google Maps Embed */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="flex flex-col"
+            className="flex w-full flex-col"
           >
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={isVisible ? { scale: 1, opacity: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center gap-2.5 self-start rounded-full border border-primary/20 dark:border-white/10 bg-primary/5 dark:bg-neutral-900/60 px-4 py-2 text-primary backdrop-blur-md transition-colors duration-300"
+              initial={{ opacity: 0, y: 40, scale: 0.96 }}
+              animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
+              whileHover={{ scale: 1.01 }}
+              className="w-full overflow-hidden rounded-3xl border border-primary/10 bg-white/90 shadow-[0_40px_120px_rgba(75,58,43,0.18)] backdrop-blur-xl"
             >
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              >
-                <FileText className="h-4 w-4" />
-              </motion.div>
-              <h6 className="text-sm font-semibold uppercase tracking-widest">
-                Request a Quote
-              </h6>
-            </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-5 text-4xl lg:text-5xl font-bold text-text-dark dark:text-white !leading-tight transition-colors duration-300"
-            >
-              Let's Talk <span className="text-primary">Renovation</span>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={isVisible ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-4 text-body-large text-text-body dark:text-neutral-400 transition-colors duration-300"
-            >
-              Have a renovation in mind? Fill out the form and we'll get in touch
-              within 24 hours to discuss your project.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="mt-10 w-full overflow-hidden rounded-2xl"
-            >
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                className="relative aspect-[4/3] w-full"
-              >
-                <Image
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/5b37b20a-86b6-49b1-af9d-5ab25a370d98-livohaus-framer-website/assets/images/zbRZCLiDosOEmYhWeaXyWUFjq4-15.jpg"
-                  alt="Modern office interior with orange sofas and a vertical garden"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-10 flex flex-col sm:flex-row gap-x-12 gap-y-8"
-            >
-              <motion.div
-                whileHover={{ y: -5 }}
-                transition={{ duration: 0.3 }}
-                className="flex items-start gap-4"
-              >
-                <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                  className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-primary/20 dark:border-white/10 bg-primary/5 dark:bg-neutral-900/60 transition-colors duration-300"
-                >
-                  <Phone className="h-5 w-5 text-primary" />
-                </motion.div>
-                <div>
-                  <h4 className="text-xl font-semibold text-text-dark dark:text-white transition-colors duration-300">
-                    Call Us Now
-                  </h4>
-                  <a
-                    href="tel:+19512390523"
-                    className="text-text-body dark:text-neutral-400 hover:text-[#FF642F] transition-colors"
-                  >
-                    +1 (951) 239-0523
-                  </a>
-                </div>
-              </motion.div>
-              <motion.div
-                whileHover={{ y: -5 }}
-                transition={{ duration: 0.3 }}
-                className="flex items-start gap-4"
-              >
-                <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                  className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-primary/20 dark:border-white/10 bg-primary/5 dark:bg-neutral-900/60 transition-colors duration-300"
-                >
-                  <Mail className="h-5 w-5 text-primary" />
-                </motion.div>
-                <div>
-                  <h4 className="text-xl font-semibold text-text-dark dark:text-white transition-colors duration-300">
-                    Email Us
-                  </h4>
-                  <a
-                    href="mailto:hello@livohaus.com"
-                    className="text-text-body dark:text-neutral-400 hover:text-[#FF642F] transition-colors"
-                  >
-                    hello@livohaus.com
-                  </a>
-                </div>
-              </motion.div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.1752138554116!2d78.46002827527444!3d17.40337710234407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97441378d4bd%3A0x7674e068ee13ee48!2sASL%20REALTORS%20A%20Realestate%20Solutions%20Company!5e0!3m2!1sen!2sin!4v1762971532643!5m2!1sen!2sin"
+                width="100%"
+                height="520"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-[420px] w-full rounded-3xl md:h-[540px]"
+                title="ASL Realtors location"
+              />
             </motion.div>
           </motion.div>
 
@@ -166,7 +112,7 @@ const ContactFormSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="bg-secondary dark:bg-neutral-900/60 border border-white/10 p-8 lg:p-12 rounded-2xl shadow-xl dark:shadow-none backdrop-blur-md transition-colors duration-300"
           >
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -241,26 +187,21 @@ const ContactFormSection = () => {
                   transition={{ delay: 0.9 }}
                 >
                   <Label htmlFor="renovationType" className="font-medium text-text-dark dark:text-white">
-                    Type of Renovation <span className="text-primary">*</span>
+                    Type of Service <span className="text-primary">*</span>
                   </Label>
-                  <Select name="renovationType" required>
+                  <Select value={serviceType} onValueChange={setServiceType} required>
                     <SelectTrigger className="mt-2 w-full bg-background dark:bg-neutral-900/80 dark:text-white dark:border-white/10">
                       <SelectValue placeholder="Select..." />
                     </SelectTrigger>
                     <SelectContent className="bg-background dark:bg-neutral-900/90 dark:text-white border border-white/10">
-                      <SelectItem value="full-home">
-                        Full-Home Renovation
-                      </SelectItem>
-                      <SelectItem value="kitchen">Kitchen Remodeling</SelectItem>
-                      <SelectItem value="bathroom">
-                        Bathroom Renovation
-                      </SelectItem>
-                      <SelectItem value="outdoor">
-                        Outdoor Living Spaces
-                      </SelectItem>
-                      <SelectItem value="finishing">Custom Finishing</SelectItem>
+                      <SelectItem value="Office">Office</SelectItem>
+                      <SelectItem value="Industrial">Industrial</SelectItem>
+                      <SelectItem value="Hospitality">Hospitality</SelectItem>
+                      <SelectItem value="Warehouses">Warehouses</SelectItem>
+                      <SelectItem value="Open Plots">Open Plots</SelectItem>
                     </SelectContent>
                   </Select>
+                  <input type="hidden" name="renovationType" value={serviceType} />
                 </motion.div>
               </div>
 
@@ -286,7 +227,7 @@ const ContactFormSection = () => {
                 transition={{ delay: 1.1 }}
               >
                 <motion.button
-                    type="submit"
+                  type="submit"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="request-quote-button w-full justify-center mt-2"

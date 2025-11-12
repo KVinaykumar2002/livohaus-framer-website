@@ -25,15 +25,14 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Facebook, href: "#", name: "Facebook" },
-    { icon: Instagram, href: "#", name: "Instagram" },
+    { icon: Instagram, href: "https://www.instagram.com/_asl_realtors/", name: "Instagram" },
     { icon: Twitter, href: "#", name: "Twitter" },
   ];
 
   const quickLinks = [
     { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
-    { href: "#projects", label: "Projects" },
-    { href: "#testimonials", label: "Testimonials" },
+    { href: "#forms", label: "Forms" },
     { href: "#contact", label: "Contact Us" },
   ];
 
@@ -67,9 +66,9 @@ const Footer = () => {
               <Image
                 src="/logo.png"
                 alt="ASL Realtors logo"
-                width={200}
-                height={900}
-                className="h-15 w-auto object-contain"
+                width={300}
+                height={150}
+                className="h-16 sm:h-20 w-auto object-contain"
                 priority
               />
               <span className="text-xl font-semibold tracking-wide text-white"></span>
@@ -133,7 +132,7 @@ const Footer = () => {
             <ul className="space-y-3 text-[#A3A3A3] text-base">
               <li className="flex items-start">
                 <MapPin className="w-4 h-4 mr-3 mt-1 flex-shrink-0" />
-                <span>California, United States</span>
+                <span> H.NO. 6-2-1/13, 2nd floor,<br /> opp. SAIFABAD POLICE STATION,<br /> Lakdikapul, Hyderabad, Telangana 500004</span>
               </li>
               <li className="flex items-start">
                 <Phone className="w-4 h-4 mr-3 mt-1 flex-shrink-0" />
@@ -141,7 +140,7 @@ const Footer = () => {
                   href="tel:617-555-0192"
                   className="hover:text-[#FF5C28] transition-colors"
                 >
-                  (617) 555-0192
+                  +91-63038 22799
                 </a>
               </li>
               <li className="flex items-start">
@@ -150,7 +149,7 @@ const Footer = () => {
                   href="mailto:contact@livohaus.com"
                   className="hover:text-[#FF5C28] transition-colors"
                 >
-                  contact@livohaus.com
+                  ceo@aslrealtors.com
                 </a>
               </li>
             </ul>

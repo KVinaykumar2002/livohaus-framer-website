@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
@@ -19,6 +19,7 @@ const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services", children: SERVICES_LINKS },
   { href: "/properties", label: "Properties" },
+  { href: "/forms", label: "Forms" },
 ];
 
 export default function Navigation() {
@@ -26,6 +27,7 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const servicesDropdownRef = useRef<HTMLDivElement | null>(null);
   // Initialise theme based on saved preference or OS-level setting.
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     if (typeof window === "undefined") {
@@ -57,6 +59,22 @@ export default function Navigation() {
     root.classList.toggle("dark", theme === "dark");
     window.localStorage.setItem("livohaus-theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    if (!isServicesOpen) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!servicesDropdownRef.current) return;
+      if (!servicesDropdownRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isServicesOpen]);
 
   const handleThemeToggle = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
@@ -109,9 +127,9 @@ export default function Navigation() {
           <Image
             src="/logo.png"
             alt="ASL Realtors logo"
-            width={200}
-            height={86}
-            className="h-12 w-auto object-contain"
+            width={240}
+            height={104}
+            className="h-14 sm:h-16 w-auto object-contain"
             priority
           />
         </Link>
@@ -119,7 +137,11 @@ export default function Navigation() {
         <div className="hidden flex-1 items-center justify-center gap-12 lg:flex">
           {NAV_LINKS.map(({ href, label, children }) =>
             children ? (
-              <div key={label} className="relative">
+              <div
+                key={label}
+                className="relative"
+                ref={label === "Services" ? servicesDropdownRef : undefined}
+              >
                 <button
                   type="button"
                   className={`${linkClasses} inline-flex items-center gap-2`}

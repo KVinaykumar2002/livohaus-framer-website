@@ -15,6 +15,7 @@ type PhaseContent = {
   title: string;
   accent: string;
   gradient: string;
+  darkAccent?: string;
   summary: string;
   sections: PhaseSection[];
 };
@@ -217,7 +218,7 @@ const phases: PhaseContent[] = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#FFF5EE] text-[#4B3A2B]">
+    <div className="min-h-screen bg-[#FFF5EE] text-[#4B3A2B] dark:bg-[#0B0B0B] dark:text-neutral-100 transition-colors duration-300">
       <Navigation />
       <main className="pt-[108px]">
         <Hero />
@@ -231,21 +232,21 @@ export default function AboutPage() {
 function Hero() {
   return (
     <section className="relative mx-auto max-w-[1180px] px-6 pb-20 pt-16 sm:px-10 lg:px-16">
-      <div className="relative overflow-hidden rounded-[40px] bg-gradient-to-br from-[#FFF5EE] via-white to-[#F9F5F0] px-8 py-16 shadow-[0_40px_120px_rgba(75,58,43,0.16)] sm:px-12 lg:px-20">
+      <div className="relative overflow-hidden rounded-[40px] bg-gradient-to-br from-[#FFF5EE] via-white to-[#F9F5F0] dark:from-[#151515] dark:via-[#101010] dark:to-[#0B0B0B] px-8 py-16 shadow-[0_40px_120px_rgba(75,58,43,0.16)] dark:shadow-[0_45px_140px_rgba(0,0,0,0.45)] sm:px-12 lg:px-20 transition-colors duration-300">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-20 -top-24 h-52 w-52 rounded-full bg-[#FF6B2C]/20 blur-[140px]" />
           <div className="absolute -right-14 -bottom-20 h-72 w-72 rounded-full bg-[#4B3A2B]/20 blur-[160px]" />
         </div>
 
-        <div className="relative z-[1] flex flex-col gap-6 text-[#4B3A2B]">
-          <span className="inline-flex w-fit items-center gap-3 rounded-full bg-white/70 px-5 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#4B3A2B] shadow-[0_12px_30px_rgba(255,107,44,0.18)]">
+        <div className="relative z-[1] flex flex-col gap-6 text-[#4B3A2B] dark:text-neutral-100 transition-colors duration-300">
+          <span className="inline-flex w-fit items-center gap-3 rounded-full bg-white/70 dark:bg-neutral-900/70 px-5 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#4B3A2B] dark:text-neutral-100 shadow-[0_12px_30px_rgba(255,107,44,0.18)] dark:shadow-[0_12px_30px_rgba(255,100,47,0.12)">
             <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[#FF6B2C]" />
             Market Intelligence & Conceptualization
           </span>
-          <h1 className="text-4xl font-semibold leading-tight text-[#2E2E2E] sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-semibold leading-tight text-[#2E2E2E] dark:text-white sm:text-5xl lg:text-6xl">
             Scroll through the cinematic journey from spark to thriving destination.
           </h1>
-          <p className="max-w-3xl text-lg leading-relaxed text-[#6B6B6B] sm:text-xl">
+          <p className="max-w-3xl text-lg leading-relaxed text-[#6B6B6B] dark:text-neutral-300 sm:text-xl">
             ASL Realtors choreographs each milestone of real estate development with data, design,
             and hospitality. Experience the phases as an immersive stack—pinning, layering, and
             revealing the craft behind every destination we launch and steward.
@@ -266,15 +267,15 @@ function ScrollStackSection() {
       </div>
 
       <div className="relative mx-auto flex max-w-[1180px] flex-col gap-10 px-6 text-center sm:px-10 lg:px-16">
-        <div className="flex flex-col items-center gap-6 text-center text-[#4B3A2B]">
-          <span className="inline-flex items-center gap-3 rounded-full bg-white/70 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#4B3A2B] shadow-[0_16px_40px_rgba(75,58,43,0.18)]">
+        <div className="flex flex-col items-center gap-6 text-center text-[#4B3A2B] dark:text-neutral-100 transition-colors duration-300">
+          <span className="inline-flex items-center gap-3 rounded-full bg-white/70 dark:bg-neutral-900/70 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#4B3A2B] dark:text-neutral-100 shadow-[0_16px_40px_rgba(75,58,43,0.18)] dark:shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
             <Sparkles className="h-4 w-4 text-[#FF6B2C]" />
             The Phased Stack
           </span>
-          <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-[#2E2E2E] sm:text-4xl lg:text-5xl">
+          <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-[#2E2E2E] dark:text-white sm:text-4xl lg:text-5xl">
             Every phase pins in place, layering depth, detail, and destination insight.
         </h2>
-          <p className="max-w-3xl text-base leading-relaxed text-[#6B6B6B] sm:text-lg">
+          <p className="max-w-3xl text-base leading-relaxed text-[#6B6B6B] dark:text-neutral-300 sm:text-lg">
             Scroll to unveil how we research, plan, activate, and sustain high-performing assets.
             Each card locks into the viewport with cinematic motion—stacking narratives much like we
             stack intelligence, experience, and operations in real life.
@@ -297,18 +298,18 @@ function ScrollStackSection() {
           {phases.map((phase, index) => (
             <ScrollStackItem
               key={phase.key}
-              itemClassName={`h-auto min-h-[560px] lg:min-h-[640px] border border-white/40 bg-white/85 backdrop-blur-xl shadow-[0_50px_140px_rgba(75,58,43,0.18)] ${phase.gradient}`}
+              itemClassName={`h-auto min-h-[560px] lg:min-h-[640px] border border-white/40 bg-white/85 backdrop-blur-xl shadow-[0_50px_140px_rgba(75,58,43,0.18)] ${phase.gradient} dark:border-white/10 dark:bg-neutral-900/80 dark:shadow-[0_55px_160px_rgba(0,0,0,0.5)]`}
             >
-              <div className="flex h-full flex-col gap-8 text-left text-[#4B3A2B]">
+              <div className="flex h-full flex-col gap-8 text-left text-[#4B3A2B] dark:text-neutral-100 transition-colors duration-300">
                 <div className="flex flex-wrap items-center justify-between gap-4">
-                  <span className="inline-flex items-center gap-3 rounded-full bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-[#4B3A2B] shadow-sm shadow-white/40">
+                  <span className="inline-flex items-center gap-3 rounded-full bg-white/80 dark:bg-neutral-900/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-[#4B3A2B] dark:text-neutral-100 shadow-sm shadow-white/40 dark:shadow-[0_10px_28px_rgba(0,0,0,0.35)]">
                     Phase {String(index + 1).padStart(2, "0")}
           </span>
                   <span className="inline-flex h-[3px] w-20 rounded-full" style={{ background: phase.accent }} />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <h3 className="text-3xl font-semibold text-[#2E2E2E] sm:text-4xl">{phase.title}</h3>
-                  <p className="max-w-3xl text-base leading-relaxed text-[#6B6B6B] sm:text-lg">
+                  <h3 className="text-3xl font-semibold text-[#2E2E2E] dark:text-white sm:text-4xl">{phase.title}</h3>
+                  <p className="max-w-3xl text-base leading-relaxed text-[#6B6B6B] dark:text-neutral-300 sm:text-lg">
                     {phase.summary}
                   </p>
                 </div>
@@ -316,12 +317,12 @@ function ScrollStackSection() {
                   {phase.sections.map((section) => (
                     <div
                       key={section.title}
-                      className="rounded-[28px] border border-white/50 bg-white/90 p-5 shadow-[0_18px_40px_rgba(75,58,43,0.1)]"
+                      className="rounded-[28px] border border-white/50 dark:border-white/10 bg-white/90 dark:bg-neutral-900/75 p-5 shadow-[0_18px_40px_rgba(75,58,43,0.1)] dark:shadow-[0_28px_60px_rgba(0,0,0,0.45)] transition-colors duration-300"
                     >
-                      <h4 className="text-sm font-semibold uppercase tracking-[0.22em] text-[#4B3A2B]/80">
+                      <h4 className="text-sm font-semibold uppercase tracking-[0.22em] text-[#4B3A2B]/80 dark:text-neutral-200">
                         {section.title}
                       </h4>
-                      <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed text-[#4B3A2B] sm:text-base">
+                      <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed text-[#4B3A2B] dark:text-neutral-200 sm:text-base">
                         {section.bullets.map((bullet) => (
                           <li key={bullet} className="flex gap-3">
                 <span

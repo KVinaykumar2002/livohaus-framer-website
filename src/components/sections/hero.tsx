@@ -102,7 +102,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.8 }}
-                  className="text-5xl md:text-6xl lg:text-[72px] font-bold leading-[1.1] tracking-[-0.02em] max-w-4xl mb-6 text-white"
+                  className="text-[44px] md:text-[56px] lg:text-[64px] font-bold leading-[1.1] tracking-[-0.02em] max-w-4xl mb-6 text-white"
                 >
                   {heroSlides[currentSlide].title}
                 </motion.h1>

@@ -76,7 +76,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       transition={{ delay: 0.3 }}
       className="absolute bottom-0 left-0 p-6 md:p-8 text-white z-10 w-full transform transition-transform group-hover:-translate-y-2"
     >
-      <h3 className="text-xl md:text-2xl font-semibold leading-snug">{project.title}</h3>
+      <h3 className="text-xl md:text-2xl font-semibold leading-snug text-white">{project.title}</h3>
       <p className="mt-2 text-sm text-white/90 leading-relaxed max-w-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">{project.description}</p>
     </motion.div>
   </motion.a>

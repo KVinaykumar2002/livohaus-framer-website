@@ -23,17 +23,17 @@ export default function ContactInfo() {
             {
               icon: MapPin,
               title: "Visit Us",
-              content: ["123 Design Avenue", "Los Angeles, CA 90001"],
+              content: [" H.NO. 6-2-1/13, 2nd FLOOR, opp. SAIFABAD POLICE STATION, Lakdikapul, Hyderabad, Telangana 500004"],
             },
             {
               icon: Phone,
               title: "Call Us",
-              content: ["(617) 555-0192", "Mon-Fri 9am-6pm"],
+              content: ["+91-63038 22799", "Mon-Fri 9am-6pm"],
             },
             {
               icon: Mail,
               title: "Email Us",
-              content: ["contact@livohaus.com", "We reply within 24hrs"],
+              content: ["ceo@aslrealtors.com", "We reply within 24hrs"],
             },
             {
               icon: Clock,
