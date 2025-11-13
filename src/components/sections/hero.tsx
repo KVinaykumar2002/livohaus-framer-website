@@ -10,7 +10,7 @@ const heroSlides = [
   {
     image: "/hero-1.png",
     badge: "#1 Choice for Home Renovation in California",
-    title: "Building Spaces That Reflect You — With Craft, Care and Complete Control",
+    title: "WELCOME TO ASL REALTORS",
     description: "ASL Realtors transforms homes with timeless design, superior materials, and detail-driven construction — all managed with care from concept to completion.",
   },
   {
@@ -22,7 +22,7 @@ const heroSlides = [
   {
     image: "/hero-3.webp",
     badge: "Award-Winning Designs",
-    title: "Creating Dream Homes That Stand The Test of Time",
+    title: "Your trusted partner in commercial leasing",
     description: "From concept to completion, we deliver exceptional results that blend functionality with breathtaking aesthetics.",
   },
 ];

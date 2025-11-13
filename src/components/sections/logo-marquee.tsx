@@ -4,8 +4,28 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
 
-const logos = Array.from({ length: 13 }, (_, index) => ({
-  src: `/logo${index + 1}.jpeg`,
+const logoFiles = [
+  "logo0.jpeg",
+  "logo1.jpeg",
+  "logo2.jpeg",
+  "logo3.jpeg",
+  "logo4.jpeg",
+  "logo5.jpeg",
+  "logo6.jpeg",
+  "logo7.jpeg",
+  "logo8.jpeg",
+  "logo9.jpeg",
+  "logo10.jpeg",
+  "logo11.jpeg",
+  "logo12.jpeg",
+  "logo13.jpeg",
+  "logo14.jpeg",
+  "logo15.jpeg",
+  "logo16.jpeg",
+];
+
+const logos = logoFiles.map((file, index) => ({
+  src: `/${file}`,
   alt: `Partner logo ${index + 1}`,
 }));
 

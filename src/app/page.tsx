@@ -23,8 +23,8 @@ export default function Home() {
         <Services />
         <ProjectsCarousel />
         <CtaBook />
-        <Testimonials />
-        <Faq />
+        {/* <Testimonials /> */}
+        {/* <Faq /> */}
         <ContactFormSection />
       </main>
       <Footer />

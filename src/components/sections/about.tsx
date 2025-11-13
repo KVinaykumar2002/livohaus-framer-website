@@ -208,7 +208,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-4xl md:text-5xl font-bold text-text-dark dark:text-white leading-tight transition-colors duration-300"
             >
-              Transforming California Homes with <span className="text-primary">Vision, Craft, and Care.</span>
+              Transforming Hyderabad's Homes with <span className="text-primary">Vision, Craft, and Care.</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0 }}
