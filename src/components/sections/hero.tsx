@@ -9,7 +9,7 @@ import { useParallax } from "@/hooks/use-parallax";
 const heroSlides = [
   {
     image: "/hero-1.png",
-    badge: "#1 Choice for Home Renovation in California",
+    badge: "#1 Choice for Home Renovation in Hyderabad",
     title: "WELCOME TO ASL REALTORS",
     description: "ASL Realtors transforms homes with timeless design, superior materials, and detail-driven construction — all managed with care from concept to completion.",
   },

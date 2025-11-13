@@ -152,6 +152,24 @@ const Footer = () => {
                   ceo@aslrealtors.com
                 </a>
               </li>
+              <li className="flex items-start">
+                <Mail className="w-4 h-4 mr-3 mt-1 flex-shrink-0" />
+                <a
+                  href="mailto:Animesh@aslrealtors.com"
+                  className="hover:text-[#FF5C28] transition-colors"
+                >
+                  Animesh@aslrealtors.com
+                </a>
+              </li>
+              <li className="flex items-start">
+                <Mail className="w-4 h-4 mr-3 mt-1 flex-shrink-0" />
+                <a
+                  href="mailto:Saif@aslrealtors.com"
+                  className="hover:text-[#FF5C28] transition-colors"
+                >
+                  Saif@aslrealtors.com
+                </a>
+              </li>
             </ul>
 
             <div className="flex space-x-3 mt-6">

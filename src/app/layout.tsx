@@ -3,6 +3,7 @@ import "./globals.css";
 import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
+import WhatsAppPulseButton from "@/components/WhatsAppPulseButton";
 
 export const metadata: Metadata = {
   title: "ASL Realtors",
@@ -29,6 +30,7 @@ export default function RootLayout({
           data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
         />
         {children}
+        <WhatsAppPulseButton />
         <VisualEditsMessenger />
       </body>
     </html>
