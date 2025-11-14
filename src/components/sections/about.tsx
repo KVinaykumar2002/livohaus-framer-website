@@ -216,7 +216,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-body-large text-text-body dark:text-neutral-400 transition-colors duration-300"
             >
-              At ASL Realtors, we specialize in bringing your renovation dreams to life — with thoughtful design, expert craftsmanship, and an obsessive attention to detail. Based in California and proudly serving homeowners since 2008, we're more than just a renovation firm.
+              At ASL Realtors, we specialize in bringing your renovation dreams to life — with thoughtful design, expert craftsmanship, and an obsessive attention to detail. Based in Hyderabad and proudly serving homeowners since 2008, we're more than just a renovation firm.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

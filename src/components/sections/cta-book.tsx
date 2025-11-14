@@ -84,7 +84,7 @@ const CtaBook = () => {
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ delay: 0.5 }}
             className="text-primary"
-          >Renovation?</motion.span>
+          >Site Visit ?</motion.span>
         </motion.h2>
 
         <motion.p

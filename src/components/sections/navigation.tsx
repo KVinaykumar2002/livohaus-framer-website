@@ -6,11 +6,13 @@ import Image from "next/image";
 import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 
 const SERVICES_LINKS = [
-  { href: "/services/industrial", label: "Industrial" },
-  { href: "/services/hospitality", label: "Hospitality" },
+  { href: "/services/retail-properties", label: "Retail properties" },
+  { href: "/services/commercial-properties", label: "Commercial properties" },
+  { href: "/services/hospitality-properties", label: "Hospitality properties" },
   { href: "/services/warehouses", label: "Warehouses" },
-  { href: "/services/open-plots", label: "Open Plots" },
-  { href: "/services/office", label: "Office" },
+  { href: "/services/open-plots", label: "Open plots" },
+  { href: "/services/office-spaces", label: "Office spaces" },
+  { href: "/services/co-working-spaces", label: "Co-working spaces" },
   { href: "/services/investments", label: "Investments" },
 ];
 

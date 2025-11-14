@@ -21,7 +21,7 @@ export default function AboutHero() {
               Building Dreams Since <span className="text-primary">2009</span>
             </h1>
             <p className="text-lg text-muted-foreground dark:text-neutral-400 mb-6 leading-relaxed transition-colors duration-300">
-              For over 15 years, ASL Realtors has been transforming houses into homes across California. Our commitment to excellence, attention to detail, and client-focused approach have made us the premier choice for luxury home renovations.
+              For over 15 years, ASL Realtors has been transforming houses into homes across Hyderabad. Our commitment to excellence, attention to detail, and client-focused approach have made us the premier choice for luxury home renovations.
             </p>
             <p className="text-lg text-muted-foreground dark:text-neutral-400 leading-relaxed transition-colors duration-300">
               We believe every home tells a story, and our mission is to help you write yours with spaces that reflect your personality, lifestyle, and aspirations.

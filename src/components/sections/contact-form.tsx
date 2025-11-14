@@ -90,7 +90,7 @@ const ContactFormSection = () => {
               transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
               whileHover={{ scale: 1.01 }}
               className="w-full overflow-hidden rounded-3xl border border-primary/10 bg-white/90 shadow-[0_40px_120px_rgba(75,58,43,0.18)] backdrop-blur-xl"
-            >
+              >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.1752138554116!2d78.46002827527444!3d17.40337710234407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97441378d4bd%3A0x7674e068ee13ee48!2sASL%20REALTORS%20A%20Realestate%20Solutions%20Company!5e0!3m2!1sen!2sin!4v1762971532643!5m2!1sen!2sin"
                 width="100%"
@@ -194,11 +194,14 @@ const ContactFormSection = () => {
                       <SelectValue placeholder="Select..." />
                     </SelectTrigger>
                     <SelectContent className="bg-background dark:bg-neutral-900/90 dark:text-white border border-white/10">
-                      <SelectItem value="Office">Office</SelectItem>
-                      <SelectItem value="Industrial">Industrial</SelectItem>
-                      <SelectItem value="Hospitality">Hospitality</SelectItem>
+                      <SelectItem value="Retail properties">Retail properties</SelectItem>
+                      <SelectItem value="Commercial properties">Commercial properties</SelectItem>
+                      <SelectItem value="Hospitality properties">Hospitality properties</SelectItem>
                       <SelectItem value="Warehouses">Warehouses</SelectItem>
-                      <SelectItem value="Open Plots">Open Plots</SelectItem>
+                      <SelectItem value="Open plots">Open plots</SelectItem>
+                      <SelectItem value="Office spaces">Office spaces</SelectItem>
+                      <SelectItem value="Co-working spaces">Co-working spaces</SelectItem>
+                      <SelectItem value="Investments">Investments</SelectItem>
                     </SelectContent>
                   </Select>
                   <input type="hidden" name="renovationType" value={serviceType} />
@@ -227,7 +230,7 @@ const ContactFormSection = () => {
                 transition={{ delay: 1.1 }}
               >
                 <motion.button
-                  type="submit"
+                    type="submit"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="request-quote-button w-full justify-center mt-2"

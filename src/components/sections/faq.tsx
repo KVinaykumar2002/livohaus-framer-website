@@ -81,7 +81,7 @@ const faqData = [
   {
     value: "item-4",
     question: "What areas do you serve?",
-    answer: "ASL Realtors proudly serves homeowners throughout California. If you are unsure whether your location falls within our service area, please don't hesitate to reach out and we will be happy to confirm.",
+    answer: "ASL Realtors proudly serves homeowners throughout Hyderabad. If you are unsure whether your location falls within our service area, please don't hesitate to reach out and we will be happy to confirm.",
   },
   {
     value: "item-5",

@@ -18,61 +18,114 @@ type ServiceCopy = {
 };
 
 const SERVICES_CONTENT: Record<string, ServiceCopy> = {
-  industrial: {
-    title: "Industrial Spaces",
-    highlight: "Industrial",
+  "retail-properties": {
+    title: "Retail Properties",
+    highlight: "Retail",
     heroDescription:
-      "Purpose-built industrial campuses engineered for throughput, compliance, and expansion-ready operations.",
+      "Prime retail spaces designed to maximize footfall, brand visibility, and sales performance in high-traffic locations.",
     heroImage: "https://silver-foundation.com/wp-content/uploads/2024/09/interiror-design.jpg",
-    heroImageAlt: "Warmly lit industrial-inspired interior lounge with modern furnishings",
+    heroImageAlt: "Modern retail storefront with contemporary design",
     narrative:
-      "From logistics parks to manufacturing units, we orchestrate land acquisition, utility design, ESG compliance, and operator onboarding so your facility powers growth from day one.",
+      "We identify and secure prime retail locations, negotiate favorable lease terms, and provide strategic positioning to help your brand thrive in competitive markets.",
     metrics: [
       {
-        label: "Footprint Strategy",
-        value: "25k–120k sq ft",
-        detail: "Flexible plot aggregation and FAR optimisation for multi-phase development.",
+        label: "Location Strategy",
+        value: "Prime Zones",
+        detail: "High-footfall areas with excellent connectivity and visibility.",
       },
       {
-        label: "Uptime Planning",
-        value: "99.5%",
-        detail: "Redundant utilities, EHS protocols, and smart monitoring baked into the blueprint.",
+        label: "Lease Terms",
+        value: "Flexible",
+        detail: "Negotiated terms that align with your business growth plans.",
       },
       {
-        label: "Ramp-Up Velocity",
-        value: "≤90 days",
-        detail: "Average handover to go-live through coordinated fit-out & commissioning.",
+        label: "Footfall Potential",
+        value: "High Traffic",
+        detail: "Strategic positioning in shopping districts and commercial hubs.",
       },
     ],
     pillars: [
       {
-        title: "Land & Infrastructure Readiness",
+        title: "Site Selection & Analysis",
         bullets: [
-          "Identify and secure industrial-zoned land parcels with connectivity advantages.",
-          "Engineer internal road, dock, and loading infrastructure for multi-tenant use.",
-          "Plan power, water, gas, and waste systems with future-proof capacity.",
+          "Identify high-traffic retail corridors and shopping destinations.",
+          "Analyze demographic profiles, spending patterns, and catchment areas.",
+          "Evaluate competition and market saturation for optimal positioning.",
         ],
       },
       {
-        title: "Compliance & Risk Governance",
+        title: "Lease Negotiation & Structuring",
         bullets: [
-          "Navigate state and central approvals, from MPCB to factory and labour clearances.",
-          "Embed fire, HSE, and ESG standards aligned with occupier audits.",
-          "Structure leasing and cross-border compliance for global manufacturing tenants.",
+          "Negotiate favorable rental terms and lease structures.",
+          "Secure tenant-friendly clauses for expansion and exit flexibility.",
+          "Coordinate legal documentation and compliance requirements.",
         ],
       },
       {
-        title: "Tenanting & Asset Performance",
+        title: "Retail Strategy & Support",
         bullets: [
-          "Curate anchor and ancillary tenant mix aligning with logistics corridors.",
-          "Build performance dashboards for throughput, uptime, and maintenance KPIs.",
-          "Provide lifecycle asset management with resale and expansion advisory.",
+          "Provide market insights and retail positioning strategies.",
+          "Facilitate brand placement and visibility optimization.",
+          "Offer ongoing support for lease renewals and portfolio expansion.",
         ],
       },
     ],
   },
-  hospitality: {
-    title: "Hospitality Projects",
+  "commercial-properties": {
+    title: "Commercial Properties",
+    highlight: "Commercial",
+    heroDescription:
+      "Premium commercial real estate solutions for businesses seeking strategic locations and growth-oriented spaces.",
+    heroImage: "https://assets.executivecentre.com/assets/Banner-Product-PrivateOffice.jpg",
+    heroImageAlt: "Modern commercial building with glass facade",
+    narrative:
+      "From standalone commercial buildings to mixed-use developments, we help businesses find the perfect commercial space that supports operations and enhances brand presence.",
+    metrics: [
+      {
+        label: "Property Types",
+        value: "Diverse",
+        detail: "Standalone buildings, mixed-use, and commercial complexes.",
+      },
+      {
+        label: "Location Coverage",
+        value: "City-wide",
+        detail: "Prime commercial zones across Hyderabad and surrounding areas.",
+      },
+      {
+        label: "Investment Options",
+        value: "Lease & Buy",
+        detail: "Flexible acquisition models to suit your business needs.",
+      },
+    ],
+    pillars: [
+      {
+        title: "Commercial Property Sourcing",
+        bullets: [
+          "Identify prime commercial locations aligned with business requirements.",
+          "Evaluate property specifications, amenities, and infrastructure.",
+          "Assess zoning compliance and commercial viability.",
+        ],
+      },
+      {
+        title: "Transaction Management",
+        bullets: [
+          "Facilitate lease negotiations and purchase transactions.",
+          "Coordinate due diligence, legal documentation, and registrations.",
+          "Manage property handovers and operational transitions.",
+        ],
+      },
+      {
+        title: "Portfolio Advisory",
+        bullets: [
+          "Provide strategic advice on commercial property investments.",
+          "Support portfolio optimization and expansion planning.",
+          "Offer property management and maintenance coordination.",
+        ],
+      },
+    ],
+  },
+  "hospitality-properties": {
+    title: "Hospitality Properties",
     highlight: "Hospitality",
     heroDescription:
       "Destination-driven hotels and resorts crafted with immersive guest journeys, brand expression, and operational resilience.",
@@ -231,8 +284,8 @@ const SERVICES_CONTENT: Record<string, ServiceCopy> = {
       },
     ],
   },
-  office: {
-    title: "Office Workspaces",
+  "office-spaces": {
+    title: "Office Spaces",
     highlight: "Office",
     heroDescription:
       "Human-centric workplaces balancing productivity, amenity, and digital infrastructure for enterprise scales.",
@@ -280,6 +333,59 @@ const SERVICES_CONTENT: Record<string, ServiceCopy> = {
           "Lead negotiations, legal documentation, and handover management.",
           "Coordinate fit-out vendors, furniture, and tech deployments.",
           "Provide workplace change management and employee onboarding experiences.",
+        ],
+      },
+    ],
+  },
+  "co-working-spaces": {
+    title: "Co-working Spaces",
+    highlight: "Co-working",
+    heroDescription:
+      "Flexible, modern co-working environments designed for startups, freelancers, and growing businesses seeking collaborative workspaces.",
+    heroImage: "https://gofloaters.com/static/62941a09086df36c9cbef6368c62fb4d/14b42/pricing-options-for-coworking-spaces-in-gachibowli.jpg",
+    heroImageAlt: "Modern co-working space with flexible seating and meeting areas",
+    narrative:
+      "We curate and manage premium co-working spaces that combine flexibility, community, and professional amenities to support modern workstyles and business growth.",
+    metrics: [
+      {
+        label: "Flexible Plans",
+        value: "Daily to Annual",
+        detail: "Membership options from hot desks to private cabins with flexible terms.",
+      },
+      {
+        label: "Amenities",
+        value: "Full-Service",
+        detail: "High-speed internet, meeting rooms, cafes, and business support services.",
+      },
+      {
+        label: "Community",
+        value: "Networking Hub",
+        detail: "Regular events, workshops, and networking opportunities for members.",
+      },
+    ],
+    pillars: [
+      {
+        title: "Space Design & Setup",
+        bullets: [
+          "Design flexible layouts that accommodate various work styles and team sizes.",
+          "Integrate modern amenities including meeting rooms, phone booths, and event spaces.",
+          "Create inspiring environments that foster productivity and collaboration.",
+        ],
+      },
+      {
+        title: "Membership & Operations",
+        bullets: [
+          "Structure flexible membership plans from daily passes to annual commitments.",
+          "Manage day-to-day operations, member services, and community engagement.",
+          "Provide technology infrastructure and business support services.",
+        ],
+      },
+      {
+        title: "Community Building",
+        bullets: [
+          "Organize networking events, workshops, and professional development sessions.",
+          "Foster a collaborative community culture among members.",
+          "Facilitate partnerships and business opportunities within the co-working ecosystem.",
         ],
       },
     ],
