@@ -208,7 +208,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-4xl md:text-5xl font-bold text-text-dark dark:text-white leading-tight transition-colors duration-300"
             >
-              Transforming Hyderabad's Homes with <span className="text-primary">Vision, Craft, and Care.</span>
+              Find Your Commercial Space in <span className="text-primary">Hyderabad</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0 }}
@@ -216,7 +216,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-body-large text-text-body dark:text-neutral-400 transition-colors duration-300"
             >
-              At ASL Realtors, we specialize in bringing your renovation dreams to life — with thoughtful design, expert craftsmanship, and an obsessive attention to detail. Based in Hyderabad and proudly serving homeowners since 2008, we're more than just a renovation firm.
+              At ASL Realtors, we specialize in commercial leasing, including office spaces, retail units, warehouses, industrial properties, mixed-use developments, and investment-grade commercial assets. Our decade of experience has equipped us with deep market insight, a powerful network of landlords and developers, and a proven ability to negotiate favorable terms for both tenants and property owners.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -5,6 +5,7 @@ import StatsSection from "@/components/sections/stats";
 import AboutSection from "@/components/sections/about";
 import Services from "@/components/sections/services";
 import ProjectsCarousel from "@/components/sections/projects-carousel";
+import ArchitecturalFloorDesign from "@/components/sections/architectural-floor-design";
 import CtaBook from "@/components/sections/cta-book";
 import Testimonials from "@/components/sections/testimonials";
 import Faq from "@/components/sections/faq";
@@ -22,6 +23,7 @@ export default function Home() {
         <AboutSection />
         <Services />
         <ProjectsCarousel />
+        <ArchitecturalFloorDesign />
         <CtaBook />
         {/* <Testimonials /> */}
         {/* <Faq /> */}
