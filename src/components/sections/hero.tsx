@@ -16,7 +16,7 @@ const heroSlides = [
   {
     image: "/hero-5.jpeg",
     badge: "Premium Real Estate Solutions",
-    title: "Transform Your Vision Into Reality With Expert Craftsmanship",
+    title: "Explore the Real Estate with Us",
     //description: "Experience luxury living with our comprehensive renovation services designed to exceed your expectations.",
   },
   {
