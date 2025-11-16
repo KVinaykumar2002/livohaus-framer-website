@@ -41,13 +41,19 @@ const servicesData = [
     title: "HYBON",
     mediaType: "video",
     gridClassName: "lg:col-span-1",
-    videoUrl: "https://res.cloudinary.com/dqvsoqsoy/video/upload/v1763286293/WhatsApp_Video_2025-11-16_at_3.13.52_PM_lvcbjx.mp4",
+    videoUrl: "https://res.cloudinary.com/dqvsoqsoy/video/upload/v1763290830/WhatsApp_Video_2025-11-16_at_3.13.51_PM_2_fosah3.mp4",
   },
   {
     title: "The Chocolate Room",
     mediaType: "video",
     gridClassName: "lg:col-span-1",
-    videoUrl: "https://res.cloudinary.com/dqvsoqsoy/video/upload/v1763286302/WhatsApp_Video_2025-11-16_at_2.37.01_PM_wpzixy.mp4",
+    videoUrl: "https://res.cloudinary.com/dqvsoqsoy/video/upload/v1763286293/WhatsApp_Video_2025-11-16_at_3.13.52_PM_lvcbjx.mp4",
+  },
+  {
+    title: "Ramraj Cotton",
+    mediaType: "video",
+    gridClassName: "lg:col-span-1",
+    videoUrl: "https://res.cloudinary.com/dqvsoqsoy/video/upload/v1763290489/WhatsApp_Video_2025-11-16_at_4.00.06_PM_sfwe2c.mp4",
   },
 ];
 
