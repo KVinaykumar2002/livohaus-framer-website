@@ -238,7 +238,7 @@ function Hero() {
           <div className="absolute -right-14 -bottom-20 h-72 w-72 rounded-full bg-[#4B3A2B]/20 blur-[160px]" />
         </div>
 
-        <div className="relative z-[1] flex flex-col gap-6 text-[#4B3A2B] dark:text-neutral-100 transition-colors duration-300">
+        {/* <div className="relative z-[1] flex flex-col gap-6 text-[#4B3A2B] dark:text-neutral-100 transition-colors duration-300">
           <span className="inline-flex w-fit items-center gap-3 rounded-full bg-white/70 dark:bg-neutral-900/70 px-5 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#4B3A2B] dark:text-neutral-100 shadow-[0_12px_30px_rgba(255,107,44,0.18)] dark:shadow-[0_12px_30px_rgba(255,100,47,0.12)">
             <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[#FF6B2C]" />
             Market Intelligence & Conceptualization
@@ -251,7 +251,7 @@ function Hero() {
             and hospitality. Experience the phases as an immersive stack—pinning, layering, and
             revealing the craft behind every destination we launch and steward.
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );
