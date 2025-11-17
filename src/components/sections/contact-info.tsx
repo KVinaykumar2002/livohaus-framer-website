@@ -28,7 +28,7 @@ export default function ContactInfo() {
             {
               icon: Phone,
               title: "Call Us",
-              content: ["+91-63038 22799", "Mon-Fri 9am-6pm"],
+              content: ["+91-63038 22799", "Mon-Fri 9am-9pm"],
             },
             {
               icon: Mail,
@@ -38,7 +38,7 @@ export default function ContactInfo() {
             {
               icon: Clock,
               title: "Working Hours",
-              content: ["Mon-Fri: 9am-6pm", "Sat: 10am-4pm"],
+              content: ["Mon-Fri: 9am-9pm", "Sat: 10am-10pm"],
             },
           ].map((item, index) => (
             <div
