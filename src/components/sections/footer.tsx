@@ -46,7 +46,7 @@ const Footer = () => {
         style={{ y }}
         className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-screen max-w-[100vw] flex justify-center items-center pointer-events-none z-0"
       >
-        <span className="font-black text-white/10 leading-none tracking-tight select-none text-[6rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem] xl:text-[14rem] 2xl:text-[16rem] whitespace-nowrap translate-y-[15%] inline-block">
+        <span className="font-black text-white/20 sm:text-white/15 md:text-white/10 leading-none tracking-tight select-none text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] 2xl:text-[14rem] whitespace-nowrap translate-y-[15%] inline-block">
           ASL Realtors
         </span>
       </motion.div>

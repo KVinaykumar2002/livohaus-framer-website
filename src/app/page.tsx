@@ -14,9 +14,9 @@ import Footer from "@/components/sections/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation />
-      <main className="pt-0">
+      <main className="pt-0 overflow-x-hidden">
         <Hero />
         <LogoMarquee />
         <StatsSection />

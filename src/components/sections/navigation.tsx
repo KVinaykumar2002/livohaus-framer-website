@@ -20,7 +20,7 @@ const NAV_LINKS = [
   { href: "/", label: "Home" },
   // { href: "/about", label: "Ideology" },
   { href: "/mission", label: "About ASL" },
-  { href: "/services", label: "Services", children: SERVICES_LINKS },
+  { href: "/services", label: "SERVICES", children: SERVICES_LINKS },
   { href: "/properties", label: "Properties" },
   { href: "/forms", label: "Entry Forms" },
 ];
@@ -143,7 +143,7 @@ export default function Navigation() {
               <div
                 key={label}
                 className="relative"
-                ref={label === "Services" ? servicesDropdownRef : undefined}
+                ref={label === "SERVICES" ? servicesDropdownRef : undefined}
               >
                 <button
                   type="button"
