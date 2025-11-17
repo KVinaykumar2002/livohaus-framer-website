@@ -93,9 +93,7 @@ const CtaBook = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed"
         >
-          Let's bring your space to life with craftsmanship, clarity, and care.
-          Whether it&apos;s a full remodel or a custom home build, ASL Realtors
-          makes the process smooth, transparent, and beautifully executed.
+          A positive start with ASL Realtors — looking ahead to great possibilities.
         </motion.p>
 
         <motion.div

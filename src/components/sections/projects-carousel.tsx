@@ -46,13 +46,13 @@ const slidesData: Project[] = [...projects, ...projects, ...projects];
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
   <motion.a
-    href="#"
+    href="/properties"
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6, delay: index * 0.1 }}
     whileHover={{ y: -10 }}
-    className="block h-full relative group rounded-2xl overflow-hidden shadow-lg"
+    className="block h-full relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer"
   >
     <motion.div
       whileHover={{ scale: 1.05 }}

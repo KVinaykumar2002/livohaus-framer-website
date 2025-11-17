@@ -68,7 +68,7 @@ const Footer = () => {
                 alt="ASL Realtors logo"
                 width={400}
                 height={200}
-                className="h-24 sm:h-32 md:h-40 lg:h-44 w-auto object-contain"
+                className="h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 w-auto object-contain"
                 priority
               />
               <span className="text-xl font-semibold tracking-wide text-white"></span>
