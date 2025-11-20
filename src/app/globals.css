@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1a1a1a;
+
+  --color-primary: #ff5c28;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #faf7f2;
+  --color-secondary-foreground: #1a1a1a;
+
+  --color-muted: #f5f5f5;
+  --color-muted-foreground: #666666;
+
+  --color-accent: #ff5c28;
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #e5e5e5;
+  --color-input: #e5e5e5;
+  --color-ring: #ff5c28;
+
+  --color-chart-1: #e67e22;
+  --color-chart-2: #2d8659;
+  --color-chart-3: #1e3a5f;
+  --color-chart-4: #f1c40f;
+  --color-chart-5: #e74c3c;
+
+  --color-hero-overlay: rgba(0, 0, 0, 0.4);
+  --color-footer-background: #1a1a1a;
+  --color-footer-foreground: #ffffff;
+  --color-footer-text-light: #a3a3a3;
+  --color-button-hover: #e64f1f;
+  --color-text-body: #666666;
+  --color-text-dark: #1a1a1a;
+  --color-text-light: #ffffff;
+  --color-text-placeholder: #a3a3a3;
+
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+    --card: var(--color-card);
+    --card-foreground: var(--color-card-foreground);
+    --popover: var(--color-popover);
+    --popover-foreground: var(--color-popover-foreground);
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-primary-foreground);
+    --secondary: var(--color-secondary);
+    --secondary-foreground: var(--color-secondary-foreground);
+    --muted: var(--color-muted);
+    --muted-foreground: var(--color-muted-foreground);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-accent-foreground);
+    --destructive: var(--color-destructive);
+    --destructive-foreground: var(--color-destructive-foreground);
+    --border: var(--color-border);
+    --input: var(--color-input);
+    --ring: var(--color-ring);
+    --chart-1: var(--color-chart-1);
+    --chart-2: var(--color-chart-2);
+    --chart-3: var(--color-chart-3);
+    --chart-4: var(--color-chart-4);
+    --chart-5: var(--color-chart-5);
+    --radius: 0.5rem; /* Default radius, adjust as needed */
+  }
+
+  .dark {
+    --color-background: #0B0B0B;
+    --color-foreground: #f5f5f5;
+
+    --color-card: rgba(24, 24, 24, 0.72);
+    --color-card-foreground: #f5f5f5;
+
+    --color-popover: rgba(24, 24, 24, 0.72);
+    --color-popover-foreground: #f5f5f5;
+
+    --color-secondary: #0B0B0B;
+    --color-secondary-foreground: #f5f5f5;
+
+    --color-muted: #111111;
+    --color-muted-foreground: #d1d1d1;
+
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-input: rgba(255, 255, 255, 0.08);
+    --color-ring: #ff642f;
+
+    --color-hero-overlay: rgba(0, 0, 0, 0.65);
+    --color-footer-background: #0B0B0B;
+    --color-footer-foreground: #f5f5f5;
+    --color-footer-text-light: #9a9a9a;
+    --color-button-hover: #ff4800;
+    --color-text-body: #d1d1d1;
+    --color-text-dark: #f5f5f5;
+  }
+
+  .dark .bg-white,
+  .dark .bg-\[\#FDF8F3\],
+  .dark .bg-\[\#EEF5FF\],
+  .dark .bg-secondary,
+  .dark .bg-background,
+  .dark .bg-gray-50,
+  .dark .bg-gray-100 {
+    background-color: #0B0B0B !important;
+  }
+
+  .dark .bg-white\/90,
+  .dark .bg-white\/80,
+  .dark .bg-white\/70,
+  .dark .bg-white\/60,
+  .dark .bg-white\/40,
+  .dark .bg-white\/20 {
+    background-color: rgba(24, 24, 24, 0.72) !important;
+  }
+
+  .dark .border-white\/20,
+  .dark .border-white\/40,
+  .dark .border-\[\#FDF8F3\],
+  .dark .border-gray-200 {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+  }
+
+  /*
+    The default border color has changed to currentColor in Tailwind CSS v4,
+    so we've added these compatibility styles to make sure everything still
+    looks the same as it did with Tailwind CSS v3.
+
+    If we ever want to remove these styles, we need to add an explicit border
+    color utility to any element that depends on these defaults.
+  */
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-text-dark);
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 4.5rem; /* 72px */
+    font-weight: 700;
+    line-height: 1.1; /* 80px */
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 3rem; /* 48px */
+    font-weight: 700;
+    line-height: 1.2; /* 58px */
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 2rem; /* 32px */
+    font-weight: 600;
+    line-height: 1.3; /* 42px */
+  }
+
+  h4 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600;
+    line-height: 1.4; /* 34px */
+  }
+
+  h6 {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 600;
+    line-height: 1.5; /* 21px */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .text-body-large {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 400;
+    line-height: 1.6; /* 29px */
+  }
+
+  .text-body-regular {
+    font-size: 1rem; /* 16px */
+    font-weight: 400;
+    line-height: 1.6; /* 26px */
+  }
+
+  .text-body-small {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 400;
+    line-height: 1.5; /* 21px */
+  }
+
+  .btn-text {
+    font-size: 1rem; /* 16px */
+    font-weight: 500;
+    line-height: 1.2; /* 19px */
+  }
+
+  .nav-link {
+    font-size: 1rem; /* 16px */
+    font-weight: 500;
+    line-height: 1.5; /* 24px */
+  }
+
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px; /* Mobile default */
+    padding-right: 20px; /* Mobile default */
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+}
+
+@layer components {
+  .request-quote-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0b0b0b;
+    background: #ffffff;
+    border: 1px solid rgba(11, 11, 11, 0.08);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+    will-change: color, box-shadow, transform;
+  }
+
+  .dark .request-quote-button {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .request-quote-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #ff642f 0%, #ff4800 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s ease;
+    will-change: transform;
+  }
+
+  .request-quote-button:hover::before,
+  .request-quote-button:focus-visible::before {
+    transform: scaleX(1);
+  }
+
+  .request-quote-button:hover,
+  .request-quote-button:focus-visible {
+    color: #ffffff;
+    box-shadow: 0 20px 45px rgba(255, 100, 47, 0.35);
+  }
+
+  .request-quote-button .request-quote-text,
+  .request-quote-button .request-quote-icon {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  }
+
+  .request-quote-button .request-quote-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #ff642f 0%, #ff4800 100%);
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(255, 100, 47, 0.35);
+  }
+
+  .request-quote-button:hover .request-quote-icon,
+  .request-quote-button:focus-visible .request-quote-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    box-shadow: none;
+  }
+
+  .request-quote-button .request-quote-icon svg {
+    transition: transform 0.3s ease;
+  }
+
+  .request-quote-button:hover .request-quote-icon svg,
+  .request-quote-button:focus-visible .request-quote-icon svg {
+    transform: translateX(4px);
+  }
+
+  .request-quote-button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 100, 47, 0.18), 0 20px 45px rgba(255, 100, 47, 0.35);
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
