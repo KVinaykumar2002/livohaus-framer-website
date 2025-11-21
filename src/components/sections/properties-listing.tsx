@@ -106,7 +106,7 @@ const properties = [
     areaRange: "2,000 to 15,000 sq.ft",
     propertyType: "retail",
     typeLabel: "Retail Space",
-    image: "/BrandFactory.jpeg",
+    image: "/PremiumRetailComplex.png",
     featured: true,
     icon: Store,
   },
