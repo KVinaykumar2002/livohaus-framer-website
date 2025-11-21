@@ -38,8 +38,8 @@ const Footer = () => {
       className="relative bg-[#0B0B0B] text-white transition-colors duration-300 overflow-x-clip"
     >
       {/* Footer Content */}
-      <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-10 lg:px-20 pt-24 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-16 mb-16">
+      <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20 pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-12 sm:pb-16 md:pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-16 mb-12 sm:mb-14 md:mb-16">
           {/* Left Column - Logo and Services */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -48,25 +48,25 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="md:col-span-2 lg:col-span-3"
           >
-            <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12 w-full">
+            <div className="flex flex-col lg:flex-row items-start gap-6 sm:gap-8 lg:gap-12 w-full">
               {/* Logo */}
-              <div className="flex-shrink-0 -m-2 w-full lg:w-auto">
+              <div className="flex-shrink-0 -m-2 w-full lg:w-auto flex justify-center lg:justify-start">
                 <Image
                   src="/asl logo blue tm.pdf (2).png"
                   alt="ASL Realtors logo"
                   width={500}
                   height={300}
-                  className="h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 2xl:h-96 w-auto min-w-[300px] sm:min-w-[350px] md:min-w-[400px] lg:min-w-[450px] xl:min-w-[500px] 2xl:min-w-[550px] object-contain"
+                  className="h-32 sm:h-40 md:h-48 lg:h-64 xl:h-72 2xl:h-80 w-auto max-w-full sm:min-w-[250px] md:min-w-[300px] lg:min-w-[400px] xl:min-w-[450px] 2xl:min-w-[500px] object-contain"
                   priority
                 />
               </div>
               
               {/* Services */}
               <div className="flex-1 w-full lg:w-auto lg:ml-6 min-w-[220px] pt-0 lg:pt-0">
-                <h3 className="font-semibold text-white mb-6 text-lg lg:text-base">
+                <h3 className="font-semibold text-white mb-4 sm:mb-6 text-base sm:text-lg lg:text-base">
                   Our Services
                 </h3>
-                <ul className="space-y-3.5">
+                <ul className="space-y-2.5 sm:space-y-3.5">
                   {services.map((service, i) => (
                     <motion.li
                       key={i}
@@ -95,10 +95,10 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col md:col-span-1 lg:col-span-1 pt-0 lg:pt-0"
           >
-            <h3 className="font-semibold text-white mb-6 text-lg lg:text-base">
+            <h3 className="font-semibold text-white mb-4 sm:mb-6 text-base sm:text-lg lg:text-base">
               Quick Links
             </h3>
-            <ul className="space-y-3.5">
+            <ul className="space-y-2.5 sm:space-y-3.5">
               {quickLinks.map((link, i) => (
                 <motion.li
                   key={i}
@@ -124,10 +124,10 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col md:col-span-1 lg:col-span-1 pt-0 lg:pt-0"
           >
-            <h3 className="font-semibold text-white mb-6 text-lg lg:text-base">
+            <h3 className="font-semibold text-white mb-4 sm:mb-6 text-base sm:text-lg lg:text-base">
               Contact Us
             </h3>
-            <ul className="space-y-3.5 text-[#E0E0E0] text-base lg:text-sm">
+            <ul className="space-y-2.5 sm:space-y-3.5 text-[#E0E0E0] text-sm sm:text-base lg:text-sm">
               <li className="flex items-start">
                 <MapPin className="w-4 h-4 mr-3 mt-1 flex-shrink-0 text-[#E0E0E0]" />
                 <span className="font-medium"> H.NO. 6-2-1/13, 2nd floor,<br /> opp. SAIFABAD POLICE STATION,<br /> Lakdikapul, Hyderabad, Telangana 500004</span>
@@ -187,7 +187,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.8 }}
-          className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-[#A3A3A3] gap-4"
+          className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-[#A3A3A3] gap-3 sm:gap-4"
         >
           <p className="flex items-center gap-2">
             Copyright ©️ 2025 ASL REALTORS. All rights reserved. ✦ Designed by{" "}

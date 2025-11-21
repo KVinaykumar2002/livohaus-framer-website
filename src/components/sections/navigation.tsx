@@ -90,16 +90,16 @@ export default function Navigation() {
   }, [isMenuOpen]);
 
   const headerClasses = [
-    "fixed top-0 left-0 z-50 w-full flex justify-center px-4 sm:px-6 lg:px-12",
-    isScrolled ? "py-3" : "py-6",
+    "fixed top-0 left-0 z-50 w-full flex justify-center px-3 sm:px-4 md:px-6 lg:px-12",
+    isScrolled ? "py-2 sm:py-3" : "py-4 sm:py-5 md:py-6",
     "transition-all duration-500 ease-in-out",
   ].join(" ");
 
   const navClassName = [
     "mx-auto flex w-full max-w-screen-2xl items-center justify-between",
-    "px-5 sm:px-8 lg:px-10 transition-all duration-500 ease-in-out",
+    "px-3 sm:px-5 md:px-8 lg:px-10 transition-all duration-500 ease-in-out",
     isScrolled
-      ? "bg-white/70 dark:bg-neutral-900/70 border border-white/20 dark:border-neutral-800 backdrop-blur-xl shadow-[0_8px_20px_rgba(0,0,0,0.08)] rounded-2xl"
+      ? "bg-white/70 dark:bg-neutral-900/70 border border-white/20 dark:border-neutral-800 backdrop-blur-xl shadow-[0_8px_20px_rgba(0,0,0,0.08)] rounded-xl sm:rounded-2xl"
       : "bg-transparent border border-transparent",
   ].join(" ");
 
@@ -132,7 +132,7 @@ export default function Navigation() {
             alt="ASL Realtors logo"
             width={240}
             height={104}
-            className="h-20 sm:h-24 md:h-28 w-auto object-contain"
+            className="h-14 sm:h-18 md:h-20 lg:h-24 xl:h-28 w-auto object-contain max-w-[180px] sm:max-w-none"
             priority
           />
         </Link>
@@ -212,12 +212,12 @@ export default function Navigation() {
       </nav>
 
       <div
-        className={`fixed inset-x-4 top-[92px] z-40 overflow-hidden rounded-2xl transition-all ease-in-out lg:hidden ${mobileShellClasses} ${
-          isMenuOpen ? "max-h-[480px] opacity-100" : "pointer-events-none max-h-0 opacity-0"
+        className={`fixed inset-x-3 sm:inset-x-4 top-[72px] sm:top-[80px] md:top-[92px] z-40 overflow-hidden rounded-xl sm:rounded-2xl transition-all ease-in-out lg:hidden ${mobileShellClasses} ${
+          isMenuOpen ? "max-h-[600px] sm:max-h-[480px] opacity-100" : "pointer-events-none max-h-0 opacity-0"
         }`}
         style={{ fontFamily: '"Poppins","Inter",sans-serif', transitionDuration: "400ms" }}
       >
-        <div className="flex flex-col gap-3 px-6 py-6 text-base font-medium uppercase tracking-[0.2em]">
+        <div className="flex flex-col gap-2 sm:gap-3 px-4 sm:px-6 py-4 sm:py-6 text-sm sm:text-base font-medium uppercase tracking-[0.2em]">
           {NAV_LINKS.map(({ href, label, children }) =>
             children ? (
               <div key={label} className="flex flex-col">

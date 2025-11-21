@@ -24,53 +24,54 @@ export default function MissionPage() {
 
 function HeroSection() {
   return (
-    <section className="relative mx-auto max-w-[1180px] px-6 pb-20 pt-16 sm:px-10 lg:px-16 overflow-hidden">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-20 -top-24 h-72 w-72 rounded-full bg-[#FF642F]/20 blur-[140px]" />
-        <div className="absolute -right-14 -bottom-20 h-96 w-96 rounded-full bg-[#4B3A2B]/20 blur-[160px]" />
-      </div>
+    <></>
+//     <section className="relative mx-auto max-w-[1180px] px-6 pb-20 pt-16 sm:px-10 lg:px-16 overflow-hidden">
+//       <div className="pointer-events-none absolute inset-0">
+//         <div className="absolute -left-20 -top-24 h-72 w-72 rounded-full bg-[#FF642F]/20 blur-[140px]" />
+//         <div className="absolute -right-14 -bottom-20 h-96 w-96 rounded-full bg-[#4B3A2B]/20 blur-[160px]" />
+//       </div>
+// {/* 
+//       <motion.div
+//         initial={{ opacity: 0, y: 30 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.8 }}
+//         className="relative z-[1]"
+//       >
+//         <div className="relative overflow-hidden rounded-[40px] bg-gradient-to-br from-[#FFF5EE] via-white to-[#F9F5F0] dark:from-[#151515] dark:via-[#101010] dark:to-[#0B0B0B] px-8 py-16 shadow-[0_40px_120px_rgba(75,58,43,0.16)] dark:shadow-[0_45px_140px_rgba(0,0,0,0.45)] sm:px-12 lg:px-20 transition-colors duration-300">
+//           <div className="pointer-events-none absolute inset-0">
+//             <div className="absolute -left-20 -top-24 h-52 w-52 rounded-full bg-[#FF642F]/20 blur-[140px]" />
+//             <div className="absolute -right-14 -bottom-20 h-72 w-72 rounded-full bg-[#4B3A2B]/20 blur-[160px]" />
+//           </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-[1]"
-      >
-        <div className="relative overflow-hidden rounded-[40px] bg-gradient-to-br from-[#FFF5EE] via-white to-[#F9F5F0] dark:from-[#151515] dark:via-[#101010] dark:to-[#0B0B0B] px-8 py-16 shadow-[0_40px_120px_rgba(75,58,43,0.16)] dark:shadow-[0_45px_140px_rgba(0,0,0,0.45)] sm:px-12 lg:px-20 transition-colors duration-300">
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute -left-20 -top-24 h-52 w-52 rounded-full bg-[#FF642F]/20 blur-[140px]" />
-            <div className="absolute -right-14 -bottom-20 h-72 w-72 rounded-full bg-[#4B3A2B]/20 blur-[160px]" />
-          </div>
-
-          <div className="relative z-[1] flex flex-col gap-6 text-[#4B3A2B] dark:text-neutral-100 transition-colors duration-300">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <span className="inline-flex w-fit items-center gap-3 rounded-full bg-white/70 dark:bg-neutral-900/70 px-5 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#4B3A2B] dark:text-neutral-100 shadow-[0_12px_30px_rgba(255,100,47,0.18)] dark:shadow-[0_12px_30px_rgba(255,100,47,0.12)]">
-                <Sparkles className="h-4 w-4 text-[#FF642F]" />
-                Our Purpose & Promise
-              </span>
-            </motion.div>
-            <AnimatedText
-              text="Building Trust, Delivering Excellence, Creating Value"
-              className="text-4xl font-semibold leading-tight text-[#2E2E2E] dark:text-white sm:text-5xl lg:text-6xl"
-              delay={0.3}
-            />
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="max-w-3xl text-lg leading-relaxed text-[#6B6B6B] dark:text-neutral-300 sm:text-xl"
-            >
-              For over 10 years, ASL Realtors has been a trusted leader in commercial real estate,
-              delivering strategic leasing solutions that support business growth and long-term success.
-            </motion.p>
-          </div>
-        </div>
-      </motion.div>
-    </section>
+//           <div className="relative z-[1] flex flex-col gap-6 text-[#4B3A2B] dark:text-neutral-100 transition-colors duration-300">
+//             <motion.div
+//               initial={{ opacity: 0, scale: 0.9 }}
+//               animate={{ opacity: 1, scale: 1 }}
+//               transition={{ duration: 0.6, delay: 0.2 }}
+//             >
+//               <span className="inline-flex w-fit items-center gap-3 rounded-full bg-white/70 dark:bg-neutral-900/70 px-5 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#4B3A2B] dark:text-neutral-100 shadow-[0_12px_30px_rgba(255,100,47,0.18)] dark:shadow-[0_12px_30px_rgba(255,100,47,0.12)]">
+//                 <Sparkles className="h-4 w-4 text-[#FF642F]" />
+//                 Our Purpose & Promise
+//               </span>
+//             </motion.div>
+//             <AnimatedText
+//               text="Building Trust, Delivering Excellence, Creating Value"
+//               className="text-4xl font-semibold leading-tight text-[#2E2E2E] dark:text-white sm:text-5xl lg:text-6xl"
+//               delay={0.3}
+//             />
+//             <motion.p
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.8, delay: 0.5 }}
+//               className="max-w-3xl text-lg leading-relaxed text-[#6B6B6B] dark:text-neutral-300 sm:text-xl"
+//             >
+//               For over 10 years, ASL Realtors has been a trusted leader in commercial real estate,
+//               delivering strategic leasing solutions that support business growth and long-term success.
+//             </motion.p>
+//           </div>
+//         </div>
+//       </motion.div> */}
+//     </section>
   );
 }
 
